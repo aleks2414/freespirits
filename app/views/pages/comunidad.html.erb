@@ -1,0 +1,42 @@
+<div class="container">
+	<div id="about">
+		<div class="row">
+			<div class="col-md-6">
+				<div id="carro">
+					<div class="owl-carousel">
+						<div> <%= image_tag "about1.jpg" %> </div>
+						<div> <%= image_tag "about2.jpg" %> </div>
+						<div> <%= image_tag "about3.jpg" %> </div>
+						<div> <%= image_tag "about4.jpg" %> </div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div id="textin">
+					<p>Este proyecto nació como un espacio, para poder difundir a toda esa gente que entrena a morir, que ve la cima desde el inicio, pero sobre todo que son personas normales, que tienen hijos y responsabilidades. <br><br>Por ti que dejas las reuniones con tus cuates por ese momento de gloria que nos ofrece nuestra madre naturaleza. <br> <br>
+						Somos una comunidad que conecta lo humano, su entorno y el deseo de conseguir las mas grandes hazañas, buscando a personas ordinarias, logrando cosas extraordinarias. <br> <br>
+						Buscamos contactar con esa gente que gusta de los planes en el exterior, ya sea que tengan experiencia o no, por eso hacemos el llamado para ser parte de esta gran aventura
+					</p>
+					<hr>
+					<h2 class="center">La comunidad de deportes extremos mas grande de México</h2> <br><br>
+					<button class="button button_blue button_center">Contáctanos</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div id="frase">
+		<h4><strong>' ' </strong>Gracias Free Spirits por darle a la gente <br>un espacio para compartir experiencias<strong> ' '</strong></h4>
+		<p class="center">- Pepé del Campo Lopez</p>
+	</div>
+</div>
+
+
+
+<%= render 'welcome/instagram' %>
+
+<script>
+	$(".owl-carousel").owlCarousel();
+</script>
