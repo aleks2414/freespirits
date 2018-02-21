@@ -63,8 +63,14 @@ haciendo cosas extraordinarias”</h4>
 		<h5>Regístrate para recibir antes que nadie noticias e información de Free Spirits</h5>
 <div id="formi">
 	<ul>
-		<li><input type="text"></li>
-		<li><button class="button2 button_blue">Regístrame</button></li>
+		<%= form_for @contact do |f| %>
+		<li>
+				<%= f.email_field :email, required:true %>
+				<%= f.text_field :donde, :value => "#{params[:controller]} - #{request.original_url}", class: "hidden" %>
+				<%= f.text_field :nickname, hint: 'Esto se queda en blanco', class: "hidden" %>
+		</li>
+		<li><%= f.submit "Registrarme", class:"button button_blue button_center"%></li>
+		<% end %>
 	</ul>
 </div>
 	</div>

@@ -1,3 +1,8 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div id="contact2">
+
 <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -19,8 +24,14 @@
   <% end -%>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", class: "button button_blue" %> <br><br>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+
+</div>
+</div>
+</div>
+</div>

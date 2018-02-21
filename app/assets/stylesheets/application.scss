@@ -118,15 +118,27 @@ p, a {
   background-size: cover;
   background-position: center center;
   /*margin-bottom: 1rem;*/
-  background-attachment: fixed;
   background-blend-mode: multiply;
   background-color: #989898;
   padding: 30px;
 }
 
+#banner2 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  /*margin-bottom: 1rem;*/
+  padding: 80px;
+}
+
 .cover_home {
   background-image: image-url("cover.jpg") !important;
   height: 80vh;
+}
+
+.cover_home3 {
+  background-image: image-url("contact.jpg") !important;
+  height: 65vh;
 }
 
 #evento1 {
@@ -199,6 +211,14 @@ h1 {
   max-width: 100px;
   margin: 20px 0;
 }
+}
+
+
+hr.left {
+	border-color: $grey;
+	border-width: 2.5px;
+	max-width: 70px;
+	margin: 20px auto;
 }
 
 #frase {
@@ -358,7 +378,10 @@ img {
   width: 300px;
   padding: 15px;
   font-family: 'Raleway', sans-serif;
-  background: #f9f9f9;
+  background-color: white;
+      border: solid 1px #e2e8ea;
+      -webkit-box-shadow: 6px 6px 2px rgba(46,133,155,0.04);
+      box-shadow: 6px 6px 2px rgba(46,133,155,0.04);
   text-align: left;
   margin: 10px;
   min-height: 340px;
@@ -465,4 +488,72 @@ img {
 
 #about {
 	margin: 70px 0;
+}
+
+#contact {
+  margin-top: -40%;
+  margin-bottom: 8%;
+  background-color: white;
+      border: solid 1px #e2e8ea;
+      -webkit-box-shadow: 6px 6px 2px rgba(46,133,155,0.04);
+      box-shadow: 6px 6px 2px rgba(46,133,155,0.04);
+  padding: 3%;
+
+input[type="url"],input[type="date"],input[type="name"], input[type="email"], input[type="textbox"], input[type="number"], input[type="tel"], input[type="text"], input[type="password"], textarea, select {
+  width: 100%;
+  height: 3.5rem;
+  border:none;
+  border:1.3px solid #dadada;
+  margin-bottom: .5rem;
+  background-color: white !important;
+  padding-left: 10px;
+  }
+
+  textarea {
+    height: 10rem !important;
+  }
+
+  label {
+  margin-top: 1rem;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 10px;
+  color: #555;
+}
+}
+
+
+
+#contact2 {
+  margin-top: 8%;
+  margin-bottom: 8%;
+  background-color: white;
+      border: solid 1px #e2e8ea;
+      -webkit-box-shadow: 6px 6px 2px rgba(46,133,155,0.04);
+      box-shadow: 6px 6px 2px rgba(46,133,155,0.04);
+  padding: 3%;
+
+input[type="url"],input[type="date"],input[type="name"], input[type="email"], input[type="textbox"], input[type="number"], input[type="tel"], input[type="text"], input[type="password"], textarea, select {
+  width: 100%;
+  height: 3.5rem;
+  border:none;
+  border:1.3px solid #dadada;
+  margin-bottom: .5rem;
+  background-color: white !important;
+  padding-left: 10px;
+  }
+
+  textarea {
+    height: 10rem !important;
+  }
+
+  label {
+  margin-top: 1rem;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 10px;
+  color: #555;
+}
 }

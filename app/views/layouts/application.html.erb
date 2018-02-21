@@ -47,7 +47,7 @@
         <li><a href="#">Tienda</a></li>
         <li><a href="#">Blog</a></li>
         <li><a href="<%= comunidad_path %>">Comunidad</a></li>
-        <li><a href="#">Contacto</a></li>
+        <li><a href="<%= new_contact_path%>">Contacto</a></li>
         <% if user_signed_in? %>
         <li class="mini"> <a href="<%= destroy_user_session_path %>" data-method='delete'>
         Cerrar Sesión

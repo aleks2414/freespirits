@@ -1,0 +1,61 @@
+<div id= "banner2" class="cover_home3">
+</div>
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<div id="contact">
+		<h1 class="center">Contáctanos</h1>
+		<hr class="left">
+		<p class="center">Queremos escuchar ti, de tus experiencias y de tus aventuras</p> <br>
+
+		<%= form_for @contact do |f| %>
+		<div class="field">
+			<%= f.label :nombre %><br>
+			<%= f.text_field :name, required:true %>
+		</div>
+
+
+				<div class="field">
+					<%= f.label :email %><br>
+					<%= f.email_field :email, required:true %>
+				</div>
+
+				<div class="field">
+					<%= f.label :teléfono %><br>
+					<%= f.text_field :phone %>
+				</div>
+
+				<%= f.text_field :donde, :value => "#{params[:controller]} - #{request.original_url}", class: "hidden" %>
+
+				<div class="field">
+					<%= f.label :ciudad %><br>
+					<%= f.text_field :city, required:true %>
+				</div>
+
+		<div class="field">
+			<%= f.label :comentarios %><br>
+			<%= f.text_area :comments %>
+		</div>
+
+		<div class="hidden">
+			<%= f.label :nickname %><br>
+			<%= f.text_field :nickname, hint: 'Esto se queda en blanco' %>
+		</div>
+
+		<br>
+		<div class="but">
+			<%= f.submit "Enviar", class:"button button_blue button_center"%>
+		</div>
+		<br>
+		<% end %>		
+
+	</div>
+		</div>
+	</div>
+	
+</div>
+
+
+<%= render 'welcome/instagram' %>
