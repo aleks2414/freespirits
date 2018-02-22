@@ -343,6 +343,13 @@ img {
     font-family: 'Raleway', sans-serif;
     font-size: 14px;
     text-transform: uppercase;
+    border-bottom: solid 1.5px transparent;
+    background-color: transparent;
+}
+
+.active {
+  border-bottom: solid 1.5px $blue;
+  background-color: transparent !important;
 }
 }
 
