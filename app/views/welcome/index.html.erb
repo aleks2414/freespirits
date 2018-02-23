@@ -13,18 +13,22 @@ haciendo cosas extraordinarias”</h4>
 </div>
 
 <div id="evento1" class="cover_event1 center">
-		<h3 class="white">Campamento en las manzanas</h3>
-		<p class="white">Jueves 25 marzo, 2018. Las manzanas Guadalajara</p>
-		<button class="button button_blue">Más información</button>
+	<% @events.each do |event| %>
+		<h3 class="white"><%= event.nombre%></h3>
+		<p class="white"><%=event.fecha %>, <%=event.lugar %></p>
+		<%= link_to "Más información", event, class: "button button_blue" %>
+		<% end %>
 </div>
 
 <div class="container">
 <div id="cats">
 	<div class="row">
 		<div class="col-md-6">
+			<%= link_to events_path do %>
 			<div id="cat_izq">
 				<h2 class="white">Eventos</h2>
 			</div>
+			<% end %>
 		</div>
 		<div class="col-md-6">
 			<div id="cat_der">
@@ -65,7 +69,7 @@ haciendo cosas extraordinarias”</h4>
 	<ul>
 		<%= form_for @contact do |f| %>
 		<li>
-				<%= f.email_field :email, required:true %>
+				<%= f.email_field :email, required:true, placeholder: "tu correo va aquí.." %>
 				<%= f.text_field :donde, :value => "#{params[:controller]} - #{request.original_url}", class: "hidden" %>
 				<%= f.text_field :nickname, hint: 'Esto se queda en blanco', class: "hidden" %>
 		</li>

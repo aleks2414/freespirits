@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :events
   get 'comunidad' => 'pages#comunidad'
 
   devise_for :users

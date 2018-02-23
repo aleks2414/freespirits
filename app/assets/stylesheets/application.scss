@@ -30,13 +30,10 @@ color: $grey;
 text-rendering: optimizeLegibility;
 }     
 
-h1, h2, h3, h4, h5, h6 {    
+h1, h2, h3, h4, h5, h6, button, p, a {    
   font-family: 'Raleway', sans-serif;
 }
 
-p, a {
-  font-family: 'Roboto Slab', serif;
-}
 
   a {
     &:hover {
@@ -70,7 +67,7 @@ p, a {
   transition: background-color .15s linear;
   font-size: 13px;
   min-width: 200px;
-  padding: 5px;
+  padding: 9px;
   display: inline-block;
   text-align: center;
   vertical-align: middle;
@@ -107,6 +104,7 @@ p, a {
 }
 
 .button_center {
+  display: block;
   margin: 0 auto !important;
   margin-top: 2rem;
   text-align: center;
@@ -139,6 +137,11 @@ p, a {
 .cover_home3 {
   background-image: image-url("contact.jpg") !important;
   height: 65vh;
+}
+
+.cover_home2 {
+  background-image: image-url("contact.jpg") !important;
+  height: 45vh;
 }
 
 #evento1 {
@@ -219,6 +222,13 @@ hr.left {
 	border-width: 2.5px;
 	max-width: 70px;
 	margin: 20px auto;
+}
+
+hr.right {
+  border-color: white;
+  border-width: 1px;
+  max-width: 70px;
+  margin: 10px auto;
 }
 
 #frase {
@@ -307,6 +317,7 @@ margin-bottom: 15px;
 
 
 #footer {
+  margin-top: 30px;
 	text-align: center;
 
 	ul {
@@ -416,7 +427,6 @@ img {
 	text-align: center;
 	font-size: 13px;
   min-height: 130px;
-  font-family: 'Roboto Slab', serif;
   line-height: 24px;
   color: $grey;
 }
@@ -563,4 +573,82 @@ input[type="url"],input[type="date"],input[type="name"], input[type="email"], in
   font-size: 10px;
   color: #555;
 }
+}
+
+
+#eventos {
+  background-image: image-url("tienda.jpg") !important;
+  background-repeat: no-repeat;
+background-size: cover;
+background-position: center center;
+  background-blend-mode: multiply;
+  background-color: #989898;
+margin-top: 50px;
+height: 200px;
+  #info {
+          position: absolute;
+  top: 57%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  }
+}
+
+.tit {
+  font-size: 14px;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding: 5px 0;
+  margin: 25px 0 0 0;
+  letter-spacing: 3px;
+}
+
+#cuadro {
+  margin-top: 20px;
+}
+
+#cuadro_izq {
+  padding: 30px 20px;
+
+}
+
+#cuadro_der {
+  background-color: white;
+  border: solid 1px #e2e8ea;
+  -webkit-box-shadow: 6px 6px 2px rgba(46,133,155,0.04);
+  box-shadow: 6px 6px 2px rgba(46,133,155,0.04);
+  padding: 30px 20px;
+}
+
+#proximos {
+  margin-top: 90px;
+}
+
+#buscadora {
+  background-color: white;
+  border: solid 1px #e2e8ea;
+  -webkit-box-shadow: 6px 6px 2px rgba(46,133,155,0.04);
+  box-shadow: 6px 6px 2px rgba(46,133,155,0.04);
+  padding: 30px 20px;
+  margin-top: 70px;
+  padding: 30px;
+  text-align: center;
+  ul {
+    list-style: none;
+    margin-left: 0px;
+    padding-left: 0px;
+    li {
+      display: inline;
+      margin: 0px 10px;
+    }
+    input[type="search"] {
+      width: 190px;
+      height: 40px;
+      border: none;
+      border: solid .5px $grey;
+      padding-left: 10px;
+    }
+    input[type="submit"]{
+      margin-top: -2px;
+    }
+  }
 }

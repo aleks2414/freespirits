@@ -1,0 +1,99 @@
+<div id= "banner" class="cover_home2">
+  <br><br>
+  <h1 class="center white"><%=@event.nombre%></h1>
+  <hr class="right">
+  <h3 class="center white"><%= @event.fecha %></h3>
+  <h4 class="center white"><%=@event.lugar %></h4>
+
+
+  <%- if @event.link_boleto.present? %>
+  <br>
+  <a href="<%= @event.link_boleto %>", target= "_blank"><button class="button button_blue button_center">Cuenten conmigo !</button></a>
+  <% end -%>
+</div>
+
+<div class="container">
+  <div id="cuadro">
+    <div class="row">
+      <div class="col-md-7">
+        <div id="cuadro_izq">
+          <h4 class="center">Vive una nueva experiencia</h4>
+          <hr class="left">
+
+          <h5 class="tit">Descripción:</h5>
+          <p><%= @event.descripcion.html_safe %></p>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div id="cuadro_der">
+          <h4 class="center">Información General</h4>
+          <hr class="left">
+
+          <h5 class="tit">Fecha:</h5>
+          <p><%= @event.fecha %></p>
+
+          <h5 class="tit">Lugar:</h5>
+          <p><%= @event.lugar %></p>
+
+          <h5 class="tit">Hora:</h5>
+          <p><%= @event.hora %></p>
+
+          <h5 class="tit">Categoría:</h5>
+          <p><%= @event.categoria %></p>
+
+          <%- if @event.link_boleto.present? %>
+          <a href="<%= @event.link_boleto %>", target= "_blank"><button class="button button_blue button_block">Consigue tus boletos</button></a>
+          <% end -%>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="container">
+  <div id="proximos">
+
+<% if @events.present? %>
+<h3 class="center">Próximos Eventos</h3>
+<hr class="left">
+<% end %>
+
+    <div class="row">
+      <% @events.each do |event| %>
+      <div class="col-md-6">
+        <%= link_to event do %>
+        <div id="eventos">
+          <div id="info">
+            <h3 class="white center"><%= event.nombre %></h3>
+            <hr class="right">
+            <h6 class="white center"><%= event.fecha%></h6>
+            <p class="white center"><%= event.lugar %></p>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+<p>
+  <strong>Foto:</strong>
+  <%= @event.foto %>
+</p>
+
+
+<div class="container">
+<% if current_user %>
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
+<% end %>
+</div>
+
+

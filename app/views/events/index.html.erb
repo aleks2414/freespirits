@@ -1,0 +1,51 @@
+
+<div class="container">
+  <div id="buscadora">
+    <h3>Busca nuestros próximos eventos</h3>
+    <hr class="left">
+  <%= search_form_for @q do |f| %>
+<ul>
+  <li>
+    <%= f.search_field :nombre_cont, placeholder: "Busca eventos.."  %>
+  </li>
+  <li>
+    <%= f.submit "Buscar", class: "button button_blue" %>
+  </li>
+</ul>
+<% end %>  
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <% @events.each do |event| %>
+    <div class="col-md-6">
+      <%= link_to event do %>
+      <div id="eventos">
+        <div id="info">
+        <h3 class="white center"><%= event.nombre %></h3>
+        <hr class="right">
+        <h6 class="white center"><%= event.fecha%></h6>
+        <p class="white center"><%= event.lugar %></p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="center">
+  <%#= will_paginate @events %>
+  </div>
+</div>
+
+<div class="container">
+<% if current_user %>
+<%= link_to 'New Event', new_event_path %>
+<% end %>
+</div>
+
+

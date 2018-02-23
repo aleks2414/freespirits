@@ -43,9 +43,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Eventos</a></li>
+        <li class="<%= 'active' if current_page?(events_path) %>"><a href="<%=events_path %>">Eventos</a></li>
         <li><a href="#">Tienda</a></li>
-        <li><%= link_to "blog", "https://medium.com/idearia-lab", :target => "_blank" %></li>
+        <li><%= link_to "blog", "https://medium.com/free-spirits-mx", :target => "_blank" %></li>
         <li class="<%= 'active' if current_page?(comunidad_path) %>"><a href="<%= comunidad_path %>">Comunidad</a></li>
         <li class="<%= 'active' if current_page?(new_contact_path) %>"><a href="<%= new_contact_path%>">Contacto</a></li>
         <% if user_signed_in? %>
@@ -70,7 +70,7 @@
 <div id="footer">
   <ul>
     <li>
-      <%= link_to "https://medium.com/idearia-lab", :target => "_blank" do %>
+      <%= link_to "https://www.facebook.com/freespiritsmx", :target => "_blank" do %>
       <%= image_tag "facebook.png" %>
       <% end %>
     </li>
@@ -82,13 +82,13 @@
     </li>
 
     <li>
-      <%= link_to "https://medium.com/idearia-lab", :target => "_blank" do %>
+      <%= link_to "https://medium.com/free-spirits-mx", :target => "_blank" do %>
       <%= image_tag "spotify.png" %>
       <% end %>
     </li>
   </ul>
 
-  <h4>Contact: contacto@freespirits.com - Copyright © 2018. All Rights Reserved.</h4>
+  <h4>Contact: comunidad@freespirits.com.mx - Copyright © 2018. All Rights Reserved.</h4>
 </div>
 
 </body>

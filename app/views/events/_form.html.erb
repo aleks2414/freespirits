@@ -1,0 +1,62 @@
+<%= form_with(model: event, local: true) do |form| %>
+  <% if event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, id: :event_nombre, required:true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha %>
+    <%= form.text_field :fecha, id: :event_fecha %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lugar %>
+    <%= form.text_field :lugar, id: :event_lugar %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_real %>
+    <%= form.date_select :fecha_real, id: :event_fecha_real %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descripcion %>
+    <%= form.cktext_area :descripcion, id: :event_descripcion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :link_boleto %>
+    <%= form.url_field :link_boleto, id: :event_link_boleto %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hora %>
+    <%= form.text_field :hora, id: :event_hora %>
+  </div>
+
+  <div class="field">
+    <%= form.label :categoria %>
+    <%= form.text_field :categoria, id: :event_categoria %>
+  </div>
+
+  <div class="field">
+    <%= form.label :foto %>
+    <%= form.file_field :foto, id: :event_foto %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
