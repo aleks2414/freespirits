@@ -49,6 +49,9 @@
         <li class="<%= 'active' if current_page?(comunidad_path) %>"><a href="<%= comunidad_path %>">Comunidad</a></li>
         <li class="<%= 'active' if current_page?(new_contact_path) %>"><a href="<%= new_contact_path%>">Contacto</a></li>
         <% if user_signed_in? %>
+      <li>
+        <a href="<%= new_event_path %>">Nuevo Evento</a>
+      </li>
         <li class="mini"> <a href="<%= destroy_user_session_path %>" data-method='delete'>
         Cerrar Sesión
       </a></li>

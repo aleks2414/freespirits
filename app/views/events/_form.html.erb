@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label :fecha_real %>
-    <%= form.date_select :fecha_real, id: :event_fecha_real %>
+    <%= form.date_select :fecha_real, id: :event_fecha_real, required:true %>
   </div>
 
   <div class="field">
@@ -53,7 +53,7 @@
 
   <div class="field">
     <%= form.label :foto %>
-    <%= form.file_field :foto, id: :event_foto %>
+    <%= form.file_field :foto, id: :event_foto, required:true %>
   </div>
 
   <div class="actions">

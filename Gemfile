@@ -26,7 +26,7 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'owlcarousel-rails'
 gem 'ransack'
-gem "will_paginate", "~> 3.0.4" 
+gem 'will_paginate', '~> 3.1.0'
 gem "ckeditor"
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

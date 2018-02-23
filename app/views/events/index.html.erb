@@ -22,7 +22,7 @@
     <% @events.each do |event| %>
     <div class="col-md-6">
       <%= link_to event do %>
-      <div id="eventos">
+      <div id="eventos" style="background-image: url(<%= event.foto %>);">
         <div id="info">
         <h3 class="white center"><%= event.nombre %></h3>
         <hr class="right">
@@ -38,14 +38,9 @@
 
 <div class="container">
   <div class="center">
-  <%#= will_paginate @events %>
+  <%= will_paginate @events %>
   </div>
 </div>
 
-<div class="container">
-<% if current_user %>
-<%= link_to 'New Event', new_event_path %>
-<% end %>
-</div>
 
 

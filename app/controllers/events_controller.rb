@@ -7,7 +7,7 @@ class EventsController < ApplicationController
   def index
     @q= Event.ransack(params[:q])
     @events = @q.result.uniq
-    # @events = @events.paginate(:page => params[:page], :per_page => 20)
+    @events = @events.paginate(:page => params[:page], :per_page => 20)
   end
 
   # GET /events/1
