@@ -41,6 +41,7 @@ prepare_meta_tags(title: "",
   # GET /events/new
   def new
     @event = Event.new
+    1.times {@event.blocks.build}
   end
 
   # GET /events/1/edit
@@ -96,6 +97,6 @@ prepare_meta_tags(title: "",
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:nombre, :fecha, :lugar, :fecha_real, :descripcion, :link_boleto, :hora, :categoria, :foto, :user_id)
+      params.require(:event).permit(:nombre, :fecha, :lugar, :fecha_real, :descripcion, :link_boleto, :hora, :categoria, :foto, :user_id, blocks_attributes: [:id, :name, :date, :time, :description, :category])
     end
 end

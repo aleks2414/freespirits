@@ -1,0 +1,42 @@
+<div class="nested-fields">
+<div class="row">
+  <div class="col-md-4">
+  <div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :name %>
+  </div>
+  </div>
+
+  <div class="col-md-4">
+  <div class="field">
+    <%= f.label :fecha %><br>
+    <%= f.text_field :date %>
+  </div>
+  </div>
+
+ <div class="col-md-4">
+  <div class="field">
+    <%= f.label :hora %><br>
+    <%= f.text_field :time %>
+  </div>
+  </div>
+
+
+  <div class="col-md-8">
+  <div class="field">
+    <%= f.label :descripción %><br>
+    <%= f.text_field :description %>
+  </div>
+  </div>
+
+  <div class="col-md-4">
+  <div class="field">
+    <%= f.label :categoría %><br>
+    <%= f.text_field :category %>
+  </div>
+  </div>
+
+
+<%= link_to_remove_association "Quitar Evento", f %>
+</div>
+</div>

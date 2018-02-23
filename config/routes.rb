@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :blocks
   resources :events
   get 'comunidad' => 'pages#comunidad'
 

@@ -652,3 +652,17 @@ height: 200px;
     }
   }
 }
+
+#bloques {
+  margin-top: 30px;
+  padding: 20px 15px;
+
+  #cerca {
+    background-color: $blue;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    height: 220px;
+    margin-bottom: 20px;
+  }
+}

@@ -1,4 +1,4 @@
-<%= form_with(model: event, local: true) do |form| %>
+<%= form_with(model: event, local: true) do |f| %>
   <% if event.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
@@ -12,51 +12,70 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :nombre %>
-    <%= form.text_field :nombre, id: :event_nombre, required:true %>
+    <%= f.label :nombre %>
+    <%= f.text_field :nombre, id: :event_nombre, required:true %>
   </div>
 
   <div class="field">
-    <%= form.label :fecha %>
-    <%= form.text_field :fecha, id: :event_fecha %>
+    <%= f.label :fecha %>
+    <%= f.text_field :fecha, id: :event_fecha %>
   </div>
 
   <div class="field">
-    <%= form.label :lugar %>
-    <%= form.text_field :lugar, id: :event_lugar %>
+    <%= f.label :lugar %>
+    <%= f.text_field :lugar, id: :event_lugar %>
   </div>
 
   <div class="field">
-    <%= form.label :fecha_real %>
-    <%= form.date_select :fecha_real, id: :event_fecha_real, required:true %>
+    <%= f.label :fecha_real %>
+    <%= f.date_select :fecha_real, id: :event_fecha_real, required:true %>
   </div>
 
   <div class="field">
-    <%= form.label :descripcion %>
-    <%= form.cktext_area :descripcion, id: :event_descripcion %>
+    <%= f.label :descripcion %>
+    <%= f.cktext_area :descripcion, id: :event_descripcion %>
   </div>
 
   <div class="field">
-    <%= form.label :link_boleto %>
-    <%= form.url_field :link_boleto, id: :event_link_boleto %>
+    <%= f.label :link_boleto %>
+    <%= f.url_field :link_boleto, id: :event_link_boleto %>
   </div>
 
   <div class="field">
-    <%= form.label :hora %>
-    <%= form.text_field :hora, id: :event_hora %>
+    <%= f.label :hora %>
+    <%= f.text_field :hora, id: :event_hora %>
   </div>
 
   <div class="field">
-    <%= form.label :categoria %>
-    <%= form.text_field :categoria, id: :event_categoria %>
+    <%= f.label :categoria %>
+    <%= f.text_field :categoria, id: :event_categoria %>
   </div>
 
   <div class="field">
-    <%= form.label :foto %>
-    <%= form.file_field :foto, id: :event_foto, required:true %>
+    <%= f.label :foto %><br>
+    <%= @event.foto if @event.foto %>
+    <br><br>
+    <%= f.file_field :foto %>
+    <%= f.hidden_field :foto_cache %>
   </div>
+
+  <hr>
+
+  <div id="formarios">
+    <h3 class="center">Itinerario:</h3>
+  <%= f.fields_for :blocks do |block| %>
+
+  <%= render "block_fields", f: block %>
+
+  <% end %>
+      <br>
+      <div class="links">
+        <%= link_to_add_association 'Añadir Evento', f, :blocks, class: "button button_blue" %>
+      </div>
+      <br>
+</div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= f.submit %>
   </div>
 <% end %>

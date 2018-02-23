@@ -1,4 +1,4 @@
-<div id= "banner" class="cover_home2" style="background-image: url(<%= @event.foto %>);">
+<div id= "banner" class="cover_home2" style="background-image: url(<%= @event.foto %>);" >
   <br><br>
   <h1 class="center white"><%=@event.nombre%></h1>
   <hr class="right">
@@ -51,6 +51,29 @@
   </div>
 </div>
 
+<hr>
+
+<div class="container">
+  <div id="bloques">
+    <h3 class="center">Itinerario</h3>
+    <hr class="left">
+    <div class="row">
+    <% @event.blocks.each_with_index do |block, i| %>
+    <div class="col-md-4">
+      <div id="cerca">
+        <h2><%=i+1%></h2>
+        <h5 class="center"><%=block.name%></h5>
+        <hr class="right">
+        <p><%=block.date%> - <%= block.time %></p>
+        <h4><%=block.description%></h4>
+      </div>
+    </div>
+    <% end %>
+    </div>
+  </div>
+</div>
+
+
 
 
 
@@ -81,12 +104,6 @@
   </div>
 </div>
 
-
-
-<p>
-  <strong>Foto:</strong>
-  <%= @event.foto %>
-</p>
 
 
 <div class="container">
