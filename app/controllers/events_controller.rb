@@ -9,13 +9,12 @@ class EventsController < ApplicationController
     @events = @q.result.uniq
     @events = @events.paginate(:page => params[:page], :per_page => 20)
 
-prepare_meta_tags(title: "",
-  description: "", 
-  keywords: %w[Hacemos-innovación hacemos-la-definición-de-la-estrategia],
+prepare_meta_tags(title: "Eventos | Free Spirits",
+  description: "Informacion acerca de acontecimientos importante de Free Spirits", 
     og: {
         site_name: "- Free Spirits Mx",
-        title: "| Free Spirits Mx",
-        description: "",
+        title: "Eventos | Free Spirits Mx",
+        description: "Informacion acerca de acontecimientos importante de Free Spirits",
         type: 'website'
       }
 ) 
@@ -26,13 +25,12 @@ prepare_meta_tags(title: "",
   def show
     @events = Event.where("fecha_real > ?", @event.fecha_real).order('id ASC').limit(2)
 
-prepare_meta_tags(title: "",
-  description: "", 
-  keywords: %w[Hacemos-innovación hacemos-la-definición-de-la-estrategia],
+prepare_meta_tags(title: "Evento | Free Spirits",
+  description: "Informacion acerca de acontecimientos importante de Free Spirits", 
     og: {
-        site_name: "- Free Spirits Mx",
+        site_name: "Evento - Free Spirits Mx",
         title: "| Free Spirits Mx",
-        description: "",
+        description: "Informacion acerca de acontecimientos importante de Free Spirits",
         type: 'website'
       }
 ) 

@@ -4,13 +4,12 @@ class ContactsController < ApplicationController
 def new
 	@contact = Contact.new
 
-prepare_meta_tags(title: "",
-  description: "", 
-  keywords: %w[Hacemos-innovación hacemos-la-definición-de-la-estrategia],
+prepare_meta_tags(title: "Contacto | Free Spirits MX",
+  description: "Contactar a Free Spirits y conocer mas noticias y eventos", 
     og: {
         site_name: "- Free Spirits Mx",
-        title: "| Free Spirits Mx",
-        description: "",
+        title: "Contacto | Free Spirits Mx",
+        description: "Contactar a Free Spirits y conocer mas noticias y eventos",
         type: 'website'
       }
 )	

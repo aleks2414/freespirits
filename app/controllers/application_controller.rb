@@ -10,7 +10,7 @@ before_action :prepare_meta_tags, if: "request.get?"
     description = "Espacio dedicado a toda la gente ordinaria que logra cosas extraordinarias, que le gusta la aventura y los buenos amigos"
     image       = options[:image] || "https://afternoon-castle-43942.herokuapp.com/assets/logo-120eb8bb2b448f0829217f2c3b81a6c81ed9471863b4263121015812b26452d8.svg"
     current_url = request.url
-    keywords    = %w[eventos extremos, deportes extremos, escalada, maraton, aire libre, montañismo, escalada, excursionismo, ciclismo, acampada,]
+    keywords    = %w[eventos extremos, deportes extremos, bicicleta, enduro, alpinismo, escalada, escalada en hielo, trail, acampar, aventura, espíritu libre, actividades al aire libre, alta montaña, sendero, rapel, tipos de escalada, trekking, bicicleta de montaña, bicicleta de ruta]
 
     # Let's prepare a nice set of defaults
     defaults = {
