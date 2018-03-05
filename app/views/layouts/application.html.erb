@@ -52,8 +52,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li class="<%= 'active' if current_page?(events_path) %>"><a href="<%=events_path %>">Eventos</a></li>
-        <li><a href="#">Tienda</a></li>
-        <li><%= link_to "blog", "https://medium.com/free-spirits-mx", :target => "_blank" %></li>
+        <!-- <li><a href="#">Tienda</a></li> -->
+        <li><%= link_to "blog", "https://medium.com/@freespiritsmx", :target => "_blank" %></li>
         <li class="<%= 'active' if current_page?(comunidad_path) %>"><a href="<%= comunidad_path %>">Comunidad</a></li>
         <li class="<%= 'active' if current_page?(new_contact_path) %>"><a href="<%= new_contact_path%>">Contacto</a></li>
         <% if user_signed_in? %>
