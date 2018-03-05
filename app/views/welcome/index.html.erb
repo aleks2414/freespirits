@@ -1,3 +1,5 @@
+<div class="owl-carousel">
+
 <div id= "banner" class="cover_home">
 <div id="titulo">
 	<h1 class="white">Disfruta el camino</h1>
@@ -5,9 +7,19 @@
 </div>
 </div>
 
+<div id= "banner" class="cover_home5">
+<div id="titulo">
+	<h1 class="white">Free Spirits MX</h1>
+	<hr class="left">
+</div>
+</div>
+
+</div>
+
+
 <div class="container">
 	<div id="frase">
-		<h4>“Gente ordanaria, <br>
+		<h4>“Gente ordanaria,
 haciendo cosas extraordinarias”</h4>
 	</div>
 </div>
@@ -23,24 +35,24 @@ haciendo cosas extraordinarias”</h4>
 <div class="container">
 <div id="cats">
 	<div class="row">
-		<div class="col-md-6">
+		<div class="col-md-12">
 			<%= link_to events_path do %>
 			<div id="cat_izq">
 				<h2 class="white">Eventos</h2>
 			</div>
 			<% end %>
 		</div>
-		<div class="col-md-6">
+<!-- 		<div class="col-md-6">
 			<div id="cat_der">
 				<h2 class="white">Tienda</h2>
 			</div>
-		</div>
+		</div> -->
 	</div>
 </div>
 </div>
 
 <div id="titulo2">
-	<h1 class="left">Inspiración</h1>
+	<h1 class="left">Blog</h1>
 	<hr class="left">
 </div>
 
@@ -87,4 +99,31 @@ haciendo cosas extraordinarias”</h4>
 <%= render 'instagram' %>
 
 
+<script>
+var owl = $('.owl-carousel');
+owl.owlCarousel({
+    items:1,
+    loop:true,
+    margin:10,
+    autoplay:true,
+    autoplayTimeout:1000,
+    autoplayHoverPause:true,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:1,
+            nav:true
+        },
+        600:{
+            items:1,
+            nav:true
+        },
+        1000:{
+            items:1,
+            nav:true,
+            loop:true
+        }
+    }
+});
+</script>
 
