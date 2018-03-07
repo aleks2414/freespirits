@@ -1,0 +1,52 @@
+<div class="container">
+  <div id="buscadora">
+    <h3>Busca nuestros Posts del Blog</h3>
+    <hr class="left">
+  <%= search_form_for @q do |f| %>
+<ul>
+  <li>
+    <%= f.search_field :titulo_cont, placeholder: "Busca posts.."  %>
+  </li>
+  <li>
+    <%= f.submit "Buscar", class: "button button_blue" %>
+  </li>
+</ul>
+<% end %>  
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <% @posts.each do |post| %>
+    <%= link_to post do %>
+    <div class="col-md-4 col-sm-6">
+      <div id="cometas">
+        <div class="imagen">
+        <%= image_tag post.post_image.url %>
+        </div>
+        <h2 class="center"><%= post.titulo.truncate(60)%></h2>
+        <h5>Por: <%= post.autor%></h5>
+        <p><%= post.body.truncate(120).html_safe%></p>
+        <hr>
+        <h6 class="center"><%=post.fecha.to_date.strftime(" %b %d, %Y") %></h6>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="center">
+  <%= will_paginate @posts %>
+  </div>
+</div>
+
+<br>
+
+<div class="container">
+<% if current_user %>
+<%= link_to 'New Post', new_post_path %>
+<% end %>
+</div>

@@ -19,6 +19,7 @@ gem 'mail_form'
 gem 'meta-tags'
 gem 'friendly_id', '~> 5.1.0'
 gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
 gem "figaro"
 gem "fog-aws"
 gem 'rails_12factor', group: :production

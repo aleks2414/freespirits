@@ -58,20 +58,27 @@ haciendo cosas extraordinarias”</h4>
 
 
 	<div id="blog">
-<div id="fm-medium-embed"></div>
-
-<script src="//data.feedmirror.com/embed.js"></script>
-<script>
-  var fmSettings = {
-    feedURL: 'https://data.feedmirror.com/-L6rXuns9_v0lB2_rttC.json',
-    integration: 'medium-embed',
-    linkOutText: 'Seguir Leyendo',
-    linkToMediumProfileText: 'Más Artículos',
-    postsCount: 3,
-    element: 'fm-medium-embed'
-  };
-  feedmirror.initialize(fmSettings);
-</script>
+<div class="container">
+  <div class="row">
+    <% @posts.each do |post| %>
+    <%= link_to post do %>
+    <div class="col-md-4 col-sm-6">
+      <div id="cometas">
+        <div class="imagen">
+        <%= image_tag post.post_image.url %>
+        </div>
+        <h2 class="center"><%= post.titulo.truncate(60)%></h2>
+        <h5>Por: <%= post.autor%></h5>
+        <p><%= post.body.truncate(120).html_safe%></p>
+        <hr>
+        <h6 class="center"><%=post.fecha.to_date.strftime(" %b %d, %Y") %></h6>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
+     </div>
+</div>
+<p class="center"><%= link_to "Todos los posts", posts_path, class: "button button_blue" %></p>
 	</div>
 
 

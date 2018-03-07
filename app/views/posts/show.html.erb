@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+    
+<% if @post.post_image.present? %>
+<div id= "banner" class="cover_home2" style="background-image: url(<%= @post.post_image %>);" >
+</div>
+<% end %>
+
+<div id="iniciales">
+  <h4><%= @post.fecha.to_date.strftime(" %b %d, %Y") %> || Free Spirits Mx</h4>
+  <h6>Por: <%= @post.autor %></h6>
+  <hr>
+
+  <h1 class="center"><%= @post.titulo %></h1>
+  <p class="center rock"> <%=@post.subtitulo %></p>
+
+<p><%= @post.body.html_safe %></p>
+</div>
+
+
+
+
+<br><br>
+<% if current_user %>
+<%= link_to 'Editar Post', edit_post_path(@post) %>
+<% end %>
+</div>
+  
+    </div>
+  </div>
+
+
+<div id="evento1" class="cover_event2 center">
+  <div class="container">
+    <h5>Regístrate para recibir antes que nadie noticias e información de Free Spirits</h5>
+<div id="formi">
+  <ul>
+    <%= form_for @contact do |f| %>
+    <li>
+        <%= f.email_field :email, required:true, placeholder: "tu correo va aquí.." %>
+        <%= f.text_field :donde, :value => "#{params[:controller]} - #{request.original_url}", class: "hidden" %>
+        <%= f.text_field :nickname, hint: 'Esto se queda en blanco', class: "hidden" %>
+    </li>
+    <li><%= f.submit "Registrarme", class:"button button_blue button_center"%></li>
+    <% end %>
+  </ul>
+</div>
+  </div>
+</div>

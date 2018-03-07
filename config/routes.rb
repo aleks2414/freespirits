@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
+  resources :posts
   resources :blocks
   resources :events
   get 'comunidad' => 'pages#comunidad'

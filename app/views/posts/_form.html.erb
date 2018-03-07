@@ -1,0 +1,56 @@
+<%= form_with(model: post, local: true) do |form| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :titulo %>
+    <%= form.text_field :titulo, id: :post_titulo, required:true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :subtitulo %>
+    <%= form.text_field :subtitulo, id: :post_subtitulo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.cktext_area :body, id: :post_body, required:true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :autor %>
+    <%= form.text_field :autor, id: :post_autor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha %>
+    <%= form.date_field :fecha, id: :post_fecha %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tags %>
+    <p>Separar por comas ( , )</p>
+    <%= form.text_field :tags, id: :post_tags, required:true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :foto %><br>
+    <%= @post.post_image if @post.post_image %>
+    <br><br>
+    <%= form.file_field :post_image %>
+    <%= form.hidden_field :post_image_cache %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "button button_blue" %>
+  </div>
+<% end %>

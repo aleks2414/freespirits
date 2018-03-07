@@ -25,11 +25,11 @@ prepare_meta_tags(title: "Eventos | Free Spirits",
   def show
     @events = Event.where("fecha_real > ?", @event.fecha_real).order('id ASC').limit(2)
 
-prepare_meta_tags(title: "Evento | Free Spirits",
+prepare_meta_tags(title: @event.nombre,
   description: "Informacion acerca de acontecimientos importante de Free Spirits", 
     og: {
         site_name: "Evento - Free Spirits Mx",
-        title: "| Free Spirits Mx",
+        title: @event.nombre,
         description: "Informacion acerca de acontecimientos importante de Free Spirits",
         type: 'website'
       }

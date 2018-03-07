@@ -41,6 +41,9 @@ h1, h2, h3, h4, h5, h6, button, p, a {
       background-color: transparent;
       color: $blue;
     }
+    &:visited {
+      color: white;
+    }
   }
 
  #content {
@@ -670,4 +673,54 @@ height: 200px;
     height: 220px;
     margin-bottom: 20px;
   }
+}
+
+#iniciales {
+  p.rock {
+    margin-bottom: 30px;
+  }
+  h4 {
+    margin-top: 30px;
+  }
+}
+
+#cometas {
+  margin-top: 30px;
+  height: 320px;
+  background-color: white;
+  padding: 2rem;
+  border: solid 1px #e2e8ea;
+  -webkit-box-shadow: 6px 6px 2px rgba(46,133,155,0.04);
+  box-shadow: 6px 6px 2px rgba(46,133,155,0.04);
+  .imagen {
+          width: 100%;
+          height:100px;
+          display:block;
+          overflow: hidden;
+          img {
+            width: 100%;
+          }
+      }
+    h2 {
+      font-size: 20px;
+      color: $grey;
+    }
+    h5 {
+      font-size: 12px;
+    }
+
+    h6 {
+      color: $grey;
+    }
+    p {
+      color: $grey;
+    }
+}
+
+#blog {
+  margin-bottom: 40px;
+}
+
+.muchos {
+  text-align: center;
 }
