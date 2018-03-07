@@ -22,7 +22,7 @@
 
 
 <br><br>
-<% if current_user %>
+<% if user_signed_in? %>
 <%= link_to 'Editar Post', edit_post_path(@post) %>
 <% end %>
 </div>

@@ -107,7 +107,7 @@
 
 
 <div class="container">
-<% if current_user %>
+<% if user_signed_in? %>
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
 <% end %>

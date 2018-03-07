@@ -46,7 +46,7 @@
 <br>
 
 <div class="container">
-<% if current_user %>
+<% if user_signed_in? %>
 <%= link_to 'New Post', new_post_path %>
 <% end %>
 </div>
