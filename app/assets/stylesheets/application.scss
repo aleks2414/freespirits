@@ -713,7 +713,7 @@ height: 200px;
       color: $grey;
     }
     p {
-      color: $grey;
+      color: $grey !important;
       font-size: 12px;
     }
 }
