@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @q= Post.ransack(params[:q])
-    @posts = @q.result.uniq
+    @posts = @q.result.order('id DESC').uniq
     @posts = @posts.paginate(:page => params[:page], :per_page => 20)
   end
 
